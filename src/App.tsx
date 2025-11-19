@@ -3,13 +3,13 @@ import { useState } from 'react';
 import './App.css'
 
 import  {Item } from './components/Item';
-import type{ ItemProps } from './components/Item';
+import type { ItemData } from './components/Item';
 
 import {List} from './components/List'
 
 function App() {
 
-  const[tasks, setTasks] =  useState<ItemProps[]> ([
+  const tasks: ItemData[] = [
   {
      title: 'Příprava prezentace',
      description: 'Vytvořit prezentaci pro páteční meeting s klientem.',
@@ -31,7 +31,7 @@ function App() {
      description: 'Otestovat nové funkce a nahlásit případné chyby.',
      done: false
   }
-]);
+];
  
 
   return (

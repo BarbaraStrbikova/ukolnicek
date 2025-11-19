@@ -1,11 +1,13 @@
 import './Item.css';
 
-export interface ItemProps {
+export type ItemData = {
   title: string;
   description: string;
   done: boolean;
 
 }
+
+type ItemProps = ItemData
 
 export const Item = ( {title, description, done} : ItemProps) => {
   return (

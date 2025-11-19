@@ -1,11 +1,13 @@
 import { Item } from "./Item";
-import type { ItemProps } from "./Item";
+import type { ItemData } from "./Item";
 
 
-export interface ListProps {
+type ListProps = {
   title: string;
-  items: ItemProps[];
+  items: ItemData[];
 }
+
+
 
 export const List = ( {title, items} : ListProps) => {
 
@@ -17,7 +19,7 @@ export const List = ( {title, items} : ListProps) => {
         key={item.title}
         title={item.title}
         description={item.description}
-        done={item.done}
+        done={item.done ?? false}
         />
       ))}
     </div>
