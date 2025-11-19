@@ -1,13 +1,16 @@
 
-import { useState } from 'react';
+
 import './App.css'
 
 import  {Item } from './components/Item';
 import type { ItemData } from './components/Item';
 
-import {List} from './components/List'
+import {List} from './components/List';
+
+import {Form} from './components/Form';
 
 function App() {
+
 
   const tasks: ItemData[] = [
   {
@@ -35,7 +38,8 @@ function App() {
  
 
   return (
-    <>
+    <> 
+    <Form/>
      <Item
       title="Uklid kuchyn"
       description='Umyj nadobi, utri stul a povysavej a vytri podlahu'
@@ -47,6 +51,7 @@ function App() {
 
     <List title="Nové úkoly" items={tasks}/>
 
+   
     
     </>
   )
