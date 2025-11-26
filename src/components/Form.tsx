@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
-type FormData = {
+export type FormData = {
   title: string;
   description: string;
+ }
+
+export type FormProps = {
+  onFormSubmit: (newTasks: FormData) => void;
 }
 
 
-export function Form () {
+export function Form ({onFormSubmit}: FormProps) {
  const [formData, setFormData] = useState<FormData>({
   title: '',
   description: '',
@@ -15,6 +19,11 @@ export function Form () {
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault()
   console.log('odeslano', formData)
+  onFormSubmit(formData)
+  setFormData({
+    title:'',
+    description:'',
+  })
   
 }
 
